@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { default: helmet } = require("helmet");
 
 const app = express();
 
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
 
 let customers = [
   {
@@ -53,6 +55,6 @@ app.post("/add", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Server is running on port ${port}`);
 });
