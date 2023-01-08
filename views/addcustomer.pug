@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Add customer
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous")
+  body
+    div.container
+      h1 New customer
+      form(action='/add', method='POST')
+        div.form-group
+          label Firstname
+          input.form-control(type="text", name="firstname")
+        div.form-group
+          label Lastname
+          input.form-control(type="text", name="lastname")
+        div.form-group
+          label Email
+          input.form-control(type="email", name="email") 
+        div.form-group
+          label Phone
+          input.form-control(type="tel", name="phone") 
+        div
+          input.btn.btn-outline-primary(type="submit", value="Add")
